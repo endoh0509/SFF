@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/endoh0509/pazucraft
+  revision: fbd8a8e636a8a95bbd65c3cf3b7e95a92d8775ab
+  specs:
+    pazucraft (0.1.0)
+      rmagick (>= 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -5,6 +12,7 @@ GEM
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
+    rmagick (2.16.0)
     sinatra (2.0.0)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -16,6 +24,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pazucraft!
   sinatra
 
 BUNDLED WITH

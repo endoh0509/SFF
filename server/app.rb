@@ -1,5 +1,8 @@
 require 'sinatra'
+require 'pazucraft'
 
 get '/' do
-  'hello'
+	# input_file = 'test.jpg'
+	# output_file = 'out.png'
+	Pazucraft::generate
 end
