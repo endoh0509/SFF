@@ -23,3 +23,13 @@
 - 運営
   - ツイートが増える(宣伝)
   - リツイートで宣伝できる
+
+## Usage
+
+とりあえずオープンソースのRubyスクリプトがあったからSinatraでサーバ立ち上げる
+
+```bash
+cd server
+bundle install --path vendor/bundle
+bundle exec ruby app.rb
+```
