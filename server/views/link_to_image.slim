@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+  body
+    include header
+    .container
+      .row
+        .col-md-12
+          a href="#{@input_file}"
+            figure.figure
+              img.figure-img.img-fluid.rounded alt=("Input image.") src="#{@input_file}" width="80%"
+              figcaption.figure-caption Input image
+            a href="#{@output_file}"
+              figure.figure
+                img.figure-img.img-fluid.rounded alt=("Output image.") src="#{@output_file}" width="80%"
+                figcaption.figure-caption Output image
+    include footer

@@ -1,8 +1,13 @@
 # frozen_string_literal: true
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 gem 'sinatra'
-gem 'pazucraft', github: "endoh0509/pazucraft"
+gem 'pazucraft', github: 'endoh0509/pazucraft'
+gem 'slim'
+gem 'sass'
+gem 'ruby-debug-ide'
+gem 'rspec'
+gem 'rack-test'
