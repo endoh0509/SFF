@@ -1,2 +1,3 @@
 server/vendor/bundle/
-server/public/img/*
+/server/public/img/**/in.jpg
+/server/public/img/**/out.png
