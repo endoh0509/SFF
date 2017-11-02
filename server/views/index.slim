@@ -1,24 +1,25 @@
 doctype html
-html style="height: 100%;"
+html style=""
   head
-  body style="margin: 0; height: 100%;"
+  body style=""
     div#fill-div.passive
     include header
     .container
       .row
-        .col-md-12
+        .col-md-12.col-xs-12
           form(action="upload" method="post" enctype="multipart/form-data" )
             input#lefile type="file" accept="image/*" name="file" style="display: none;"
             .input-group
               input.form-control#photoCover placeholder=("select file...") readonly="readonly" type="text" /
               span.input-group-btn
                 button.btn.btn-info onclick="$('input[id=lefile]').click();" type="button" ファイルを選択
-            button.btn.btn-primary#load type="button" 画像をアップロード
-          img.passive#loading src="assets/img/gopher.gif"
-      .row
+            button.btn.btn-primary.btn-block#load type="button" style="margin: 24px 0;" 画像をアップロード
+        img.passive#loading src="assets/img/gopher.gif"
+      .row style='display: flex; flex-wrap: wrap;'
         - @ids.each do |id|
-          .col-md-3
-            a href="/link_to_image/#{id}"
-              figure.figure
-                img.figure-img.img-fluid.rounded alt=("Input image.") src="/img/#{id}/in.jpg" width="80%"
+          .col-md-3.col-xs-6
+            div.mx-auto style="width: 100%"
+              a href="/link_to_image/#{id}"
+                figure.figure
+                  img.figure-img.img-fluid.rounded alt=("Input image.") src="/img/#{id}/in.jpg"
     include footer

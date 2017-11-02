@@ -7,13 +7,13 @@ html
       .row
         .col-md-12
           a href='/vr/#{@id}'
-            button.btn.btn-primary VRで見る！
+            button.btn.btn-primary.btn-block style="margin: 24px 0;" VRで見る！
           a href="#{@input_file}"
             figure.figure
-              img.figure-img.img-fluid.rounded alt=("Input image.") src="#{@input_file}" width="80%"
+              img.figure-img.img-fluid.rounded alt=("Input image.") src="#{@input_file}" width="100%"
               figcaption.figure-caption 取った写真
           a href="#{@output_file}"
             figure.figure
-              img.figure-img.img-fluid.rounded alt=("Output image.") src="#{@output_file}" width="80%"
+              img.figure-img.img-fluid.rounded alt=("Output image.") src="#{@output_file}" width="100%"
               figcaption.figure-caption ペーパークラフト
     include footer

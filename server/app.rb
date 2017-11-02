@@ -11,7 +11,7 @@ get '/' do
   @ids = Dir.glob('public/img/*').map do |img_path|
     img_path.split('/').last
   end
-  @ids.sort
+  @ids.sort!
   slim :index
 end
 
