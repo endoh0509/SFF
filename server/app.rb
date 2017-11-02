@@ -2,6 +2,7 @@ require 'sinatra'
 require 'pazucraft'
 require 'slim'
 require 'slim/include'
+require 'fileutils'
 
 set :environment, :production
 
@@ -29,6 +30,28 @@ get '/link_to_image/:id' do
   @output_file = "/img/#{image_num}/out.png"
   slim :link_to_image
 end
+
+get '/delete_image/:id' do
+  image_num = params[:id]
+  FileUtils.rm_r "public/img/#{image_num}"
+  ids = Dir.glob('public/img/*').map do |img_path|
+    img_path.split('/').last
+  end
+  if ids.size == image_num.to_i
+    redirect :'/'
+  else
+    ids.sort!
+    ids = ids[image_num.to_i..-1]
+    ids.each {|id|
+      FileUtils.move "public/img/#{id}", "public/img/#{id.to_i - 1}"
+    }
+    redirect :'/'
+  end
+end
+#
+# i = 2
+# b = [0, 1, 2, 3, 4]
+# a = [0, 1, 3, 4]
 
 post '/upload' do
   if params[:file]

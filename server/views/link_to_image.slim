@@ -16,7 +16,27 @@ html
             figure.figure
               img.figure-img.img-fluid.rounded#output-img alt=("Output image.") src="#{@output_file}" width="100%"
               figcaption.figure-caption ペーパークラフト
-          button.btn.btn-primary#print 印刷
+          div
+            button.btn.btn-primary#print 印刷
+          button.btn.btn-danger type="button" style="margin: 24px 0;" data-toggle="modal" data-target="#delete-modal" 削除！
+
+    #delete-modal.modal.fade tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      .modal-dialog role="document"
+        .modal-content
+          .modal-header
+            h5.modal-title
+              | 最終確認です
+            button.close type="button" data-dismiss="modal" aria-label="Close"
+              span aria-hidden="true"
+                | ×
+          .modal-body
+            | その思い出、本当に消しちゃうんすか？
+          .modal-footer
+            button.btn.btn-secondary type="button" data-dismiss="modal"
+              | 思い留まる
+            a href='/delete_image/#{@id}'
+              button.btn.btn-danger type="button"
+                | 男に二言は無い！
     javascript:
       $('#print').on('click', function() {
           var src = $('#output-img').attr('src');
