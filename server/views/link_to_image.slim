@@ -16,12 +16,14 @@ html
             figure.figure
               img.figure-img.img-fluid.rounded#output-img alt=("Output image.") src="#{@output_file}" width="100%"
               figcaption.figure-caption ペーパークラフト
-          button.btn#print print
+          button.btn.btn-primary#print 印刷
     javascript:
       $('#print').on('click', function() {
           var src = $('#output-img').attr('src');
           var win = window.open(src);
-          win.focus();
-          win.print();
+          win.onload=function () {
+              win.focus();
+              win.print();
+          };
       });
     include footer
