@@ -6,12 +6,14 @@ html
     .container
       .row
         .col-md-12
+          a href='/vr/#{@id}'
+            button.btn.btn-primary VRを見に行く！
           a href="#{@input_file}"
             figure.figure
               img.figure-img.img-fluid.rounded alt=("Input image.") src="#{@input_file}" width="80%"
-              figcaption.figure-caption Input image
-            a href="#{@output_file}"
-              figure.figure
-                img.figure-img.img-fluid.rounded alt=("Output image.") src="#{@output_file}" width="80%"
-                figcaption.figure-caption Output image
+              figcaption.figure-caption 取った写真
+          a href="#{@output_file}"
+            figure.figure
+              img.figure-img.img-fluid.rounded alt=("Output image.") src="#{@output_file}" width="80%"
+              figcaption.figure-caption ペーパークラフト
     include footer

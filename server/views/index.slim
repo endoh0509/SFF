@@ -12,8 +12,8 @@ html style="height: 100%;"
             .input-group
               input.form-control#photoCover placeholder=("select file...") type="text" /
               span.input-group-btn
-                button.btn.btn-info onclick="$('input[id=lefile]').click();" type="button"  Browse
-            button.btn.btn-primary#load type="button" Upload image
+                button.btn.btn-info onclick="$('input[id=lefile]').click();" type="button" ファイルを選択
+            button.btn.btn-primary#load type="button" 画像をアップロード
           img.passive#loading src="assets/img/gopher.gif"
       .row
         - @ids.each do |id|

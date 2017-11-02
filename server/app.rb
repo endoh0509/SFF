@@ -15,8 +15,16 @@ get '/' do
   slim :index
 end
 
+get '/vr/:id' do
+  image_num = params[:id]
+  @id = image_num
+  @img = "/img/#{image_num}/in.jpg"
+  slim :vr
+end
+
 get '/link_to_image/:id' do
   image_num = params[:id]
+  @id = image_num
   @input_file = "/img/#{image_num}/in.jpg"
   @output_file = "/img/#{image_num}/out.png"
   slim :link_to_image
@@ -40,7 +48,7 @@ post '/upload' do
         image = norishiro_img.composite(image, 0, 0, Magick::OverCompositeOp)
         image.write(@output_file)
       else
-        image = Magick::Image.read(tempfile.path)[0]
+        image = Magick::Image.read(tempfile.path).first
         image.write(@input_file)
         Pazucraft::generate @input_file, @output_file
       end

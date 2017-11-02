@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    script src="/assets/js/aframe.min.js"
+    script src="/assets/js/jquery.min.js"
+    script src="/assets/js/popper.min.js"
+    script src="/assets/js/bootstrap.js"
+    link rel="stylesheet" href="/assets/css/bootstrap.css"
+    link rel="stylesheet" href="/assets/css/font-awesome.min.css"
+    script src="/assets/js/main.js"
+    link rel="stylesheet" href="/assets/css/style.css"
+  body
+    a href="/link_to_image/#{@id}" style="position: absolute; z-index: 100;"
+      button.btn.btn-primary 戻る！
+    a-scene
+      a-assets
+        img#sky src="#{@img}"
+      a-sky src="#sky"
