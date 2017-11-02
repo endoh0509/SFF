@@ -8,11 +8,9 @@ html style="height: 100%;"
       .row
         .col-md-12
           form(action="upload" method="post" enctype="multipart/form-data" )
-            /input type="file" accept="image/*" name="file"
-
             input#lefile type="file" accept="image/*" name="file" style="display: none;"
             .input-group
-              input.form-control#photoCover readonly="readonly" placeholder=("select file...") type="text" /
+              input.form-control#photoCover placeholder=("select file...") type="text" /
               span.input-group-btn
                 button.btn.btn-info onclick="$('input[id=lefile]').click();" type="button"  Browse
             button.btn.btn-primary#load type="button" Upload image
