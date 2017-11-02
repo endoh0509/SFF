@@ -10,7 +10,7 @@ html style="height: 100%;"
           form(action="upload" method="post" enctype="multipart/form-data" )
             input#lefile type="file" accept="image/*" name="file" style="display: none;"
             .input-group
-              input.form-control#photoCover placeholder=("select file...") type="text" /
+              input.form-control#photoCover placeholder=("select file...") readonly="readonly" type="text" /
               span.input-group-btn
                 button.btn.btn-info onclick="$('input[id=lefile]').click();" type="button" ファイルを選択
             button.btn.btn-primary#load type="button" 画像をアップロード
