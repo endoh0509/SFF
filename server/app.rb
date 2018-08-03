@@ -65,7 +65,7 @@ post '/upload' do
     File.open(@input_file, 'wb') do |f|
       if content_type == 'image/jpeg'
         f.write(tempfile.read)
-        Pazucraft::generate @input_file, @output_file
+        Pazucraft::generate_file(@input_file, @output_file)
         image = Magick::Image.read(@output_file).first
         norishiro_img = Magick::Image.read(noroshiro).first
         image = norishiro_img.composite(image, 0, 0, Magick::OverCompositeOp)
@@ -73,7 +73,7 @@ post '/upload' do
       else
         image = Magick::Image.read(tempfile.path).first
         image.write(@input_file)
-        Pazucraft::generate @input_file, @output_file
+        Pazucraft::generate_file(@input_file, @output_file)
       end
     end
     redirect :"link_to_image/#{image_num}"
